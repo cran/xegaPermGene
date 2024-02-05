@@ -1,0 +1,66 @@
+
+
+library(testthat)
+library(xegaSelectGene)
+library(xegaPermGene)
+
+test_that("newTSP consistency of dimensions, cities, and path OK",
+{
+a<-sample(1:10)
+b<-matrix(1:9, nrow=3)
+c<-matrix(1:12, nrow=3)
+d<-array(1:8, dim=c(2, 2, 2)) 
+tsp1<-newTSP(b, Name="tsp1")
+expect_identical(tsp1$dist(), b)
+expect_identical(tsp1$name(), "tsp1")
+expect_equal(tsp1$genelength(), 3)
+#### Try?
+expect_error(newTSP(a, Name="tspa"))
+expect_error(newTSP(c, Name="tspc"))
+expect_error(newTSP(d, Name="tspd"))
+expect_error(newTSP(b, Name="tsp1", Cities=c("Aa", "Ba")))
+expect_error(newTSP(b, Name="tsp1", Cities=c("Aa", "Ba", "Ca", "Da")))
+tsp2<-newTSP(b, Name="tsp1", Cities=c("Aa", "Ba", "Ca"))
+expect_identical(tsp2$cities(), c("Aa", "Ba", "Ca"))
+expect_error(newTSP(b, Name="tsp1", Path=c(1, 3)))
+expect_error(newTSP(b, Name="tsp1", Path=c(1, 2, 4, 5)))
+tsp3<-newTSP(b, Name="tsp1", Path=c(1, 2, 3))
+expect_identical(tsp3$path(), c(1, 2, 3))
+expect_error(newTSP(b, Name="tsp1", Path=c(1, 4, 3)))
+}
+)
+
+test_that("newTSP Building lau15 OK",
+{
+a<-matrix(0, nrow=15, ncol=15)
+a[1,]<- c(0, 29, 82, 46, 68, 52, 72, 42, 51,  55,  29,  74,  23,  72,  46)
+a[2,]<- c(29,  0, 55, 46, 42, 43, 43, 23, 23,  31,  41,  51,  11,  52,  21)
+a[3,]<- c(82, 55,  0, 68, 46, 55, 23, 43, 41,  29,  79,  21,  64,  31,  51)
+a[4,]<-c(46, 46, 68,  0, 82, 15, 72, 31, 62,  42,  21,  51,  51,  43,  64)
+a[5,]<-c(68, 42, 46, 82,  0, 74, 23, 52, 21,  46,  82,  58,  46,  65,  23)
+a[6,]<-c(52, 43, 55, 15, 74,  0, 61, 23, 55,  31,  33,  37,  51,  29,  59)
+a[7,]<-c(72, 43, 23, 72, 23, 61,  0, 42, 23,  31,  77,  37,  51,  46,  33)
+a[8,]<-c(42, 23, 43, 31, 52, 23, 42,  0, 33,  15,  37,  33,  33,  31,  37)
+a[9,]<-c(51, 23, 41, 62, 21, 55, 23, 33,  0,  29,  62,  46,  29,  51,  11)
+a[10,]<-c(55, 31, 29, 42, 46, 31, 31, 15, 29,  0,  51,  21,  41,  23,  37)
+a[11,]<-c(29, 41, 79, 21, 82, 33, 77, 37, 62,  51,   0,  65,  42,  59,  61)
+a[12,]<-c(74, 51, 21, 51, 58, 37, 37, 33, 46,  21,  65,   0,  61,  11,  55)
+a[13,]<-c(23, 11, 64, 51, 46, 51, 51, 33, 29,  41,  42,  61,   0,  62,  23)
+a[14,]<-c(72, 52, 31, 43, 65, 29, 46, 31, 51,  23,  59,  11,  62,   0,  59)
+a[15,]<-c(46, 21, 51, 64, 23, 59, 33, 37, 11,  37,  61,  55,  23,  59,   0)
+lau15<-newTSP(a, Name="lau15", Solution=291, Path=c(3,7,5,9,15,2,13,1,11,4,6,8,10,14,12))
+set.seed(1)
+p1<-sample(1:15, 15, replace=FALSE)
+p2<-lau15$path()
+expect_equal(lau15$f(p1), 745)
+expect_output(lau15$show(p1), "745")
+expect_identical(all(lau15$greedy(3, 2) %in% lau15$greedy(3, 3)), TRUE)
+expect_identical(all(lau15$kBestGreedy(3, tour=TRUE) %in% lau15$kBestGreedy(3, TRUE)), TRUE)
+expect_lt(lau15$f(lau15$rnd2Opt(p1)), 745)
+expect_equal(lau15$f(lau15$rnd2Opt(p2)), 291)
+expect_lt(lau15$f(lau15$LinKernighan(p1)), 745)
+expect_equal(lau15$f(lau15$LinKernighan(p2)), 291)
+expect_output(lau15$LinKernighan(p2, show=TRUE), "diff")
+}
+)
+
