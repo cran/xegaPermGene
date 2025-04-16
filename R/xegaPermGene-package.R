@@ -30,8 +30,8 @@
 #' A problem environment \code{penv} for the TSP must provide:
 #'   \itemize{
 #'     \item \code{$name()}: Returns the name of the problem environment.
-#'     \item \code{$genelength()}: The number of bits of the binary coded
-#'                        real parameter vector. Used in \code{InitGene}.
+#'     \item \code{$genelength()}: The number of integers of a permutation.
+#'                                 Used in \code{InitGene}.
 #'     \item \code{$dist()}: The distance matrix of the TSP.
 #'     \item \code{$cities()}: A list of city names or \code{1:numberOfCities}.
 #'     \item \code{$f(permutation, gene, lF)}: 
@@ -73,7 +73,7 @@
 #' 
 #' @section Local Constants of Mutation Functions:
 #'
-#' The local constants of a mutation function determine the 
+#' The local constants of a mutation function determine
 #' the behavior of the function. 
 #'
 #' \tabular{rcl}{ 
@@ -109,29 +109,29 @@
 #' provides a function call interface and configuration support
 #' for several algorithms: genetic algorithms (sga), 
 #' permutation-based genetic algorithms (sgPerm), 
-#' derivation free algorithms as e.g. differential evolution (sgde), 
+#' derivation-free algorithms as e.g. differential evolution (sgde), 
 #' grammar-based genetic programming (sgp) and grammatical evolution
 #' (sge). 
 #'
 #' \item
 #' The population layer (package \code{xegaPopulation}) contains
-#' population related functionality as well as support for 
+#' population-related functionality as well as support for 
 #' population statistics dependent adaptive mechanisms and parallelization.
 #'
 #' \item 
-#' The gene layer is split in a representation independent and 
-#' a representation dependent part:
+#' The gene layer is split into a representation-independent and 
+#' a representation-dependent part:
 #' \enumerate{
 #' \item 
-#'  The representation indendent part (package \code{xegaSelectGene})
+#'  The representation-indendent part (package \code{xegaSelectGene})
 #'  is responsible for variants of selection operators, evaluation 
 #'  strategies for genes, as well as profiling and timing capabilities.        
 #' \item 
-#'  The representation dependent part consists of the following packages: 
+#'  The representation-dependent part consists of the following packages: 
 #' \itemize{
 #' \item \code{xegaGaGene} for binary coded genetic algorithms.
 #' \item \code{xegaPermGene} for permutation-based genetic algorithms.
-#' \item \code{xegaDfGene} for derivation free algorithms as e.g. 
+#' \item \code{xegaDfGene} for derivation-free algorithms as e.g. 
 #'                         differential evolution.
 #' \item \code{xegaGpGene} for grammar-based genetic algorithms.
 #' \item \code{xegaGeGene} for grammatical evolution algorithms.
@@ -139,7 +139,7 @@
 #' The packages \code{xegaDerivationTrees} and \code{xegaBNF} support
 #' the last two packages:
 #' \code{xegaBNF} essentially provides a grammar compiler and 
-#' \code{xegaDerivationTrees} an abstract data type for derivation trees.
+#' \code{xegaDerivationTrees} is an abstract data type for derivation trees.
 #' }} 
 #'
 #' @family Package Description
@@ -153,5 +153,5 @@
 #' @section License: MIT
 #' @section URL: <https://github.com/ageyerschulz/xegaPermGene>
 #' @section Installation: From CRAN by \code{install.packages('xegaPermGene')}
-NULL
+"_PACKAGE"
 

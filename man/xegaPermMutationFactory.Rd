@@ -17,7 +17,7 @@ A permutation based mutation function.
              of one of the gene mutation functions in this 
              package by specifying a text string.
              The selection fails ungracefully (produces
-             a runtime error), if the label does not match.
+             a runtime error) if the label does not match.
              The functions are specified locally.             
         
 Current Support:

@@ -19,7 +19,7 @@
 #'    We use the local function list (the local configuration) for 
 #'    \enumerate{
 #'    \item
-#'       replacing all constants by constant functions.
+#'       replacing all constants with constant functions.
 #'       
 #'       Rationale: We need one formal argument (the local function list lF)
 #'       and we can dispatch multiple functions. E.g.  \code{lF$verbose()}

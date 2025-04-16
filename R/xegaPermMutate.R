@@ -9,10 +9,10 @@
 #' Mutate a gene (generalized order based mutation).
 #'
 #' @description \code{xegaPermMutateGene} mutates a permutation.
-#'               The per position mutation rate is given by 
+#'               The per-position mutation rate is given by 
 #'               \code{lF$BitMutationRate1()}.
 #'
-#' @details This operator is an implementation of a generalized 
+#' @details This operator implements a generalized 
 #'          order based mutation operator (Syswerda, 1991).
 #'
 #'          \enumerate{
@@ -57,10 +57,10 @@ xegaPermMutateGeneOrderBased<-function(gene, lF)
 #' Mutate a gene (k random inversions).
 #'
 #' @description \code{xegaPermMutateGenekInversion} performs k random inversions.
-#'              The number of inversions is expontially decaying
+#'              The number of inversions is exponentially decaying
 #'              with exponential decay constant \code{lambda}.
 #'
-#' @details The only difference to the order based mutation 
+#' @details The only difference to the order-based mutation 
 #'          operator (Syswerda, 1991) is the exponential decay 
 #'          in the number of inversions. 
 #'
@@ -107,7 +107,6 @@ xegaPermMutateGenekInversion<-function(gene, lF)
 #' Mutate a gene (by a random 2-Opt move).
 #'
 #' @description \code{xegaPermMutateGene2Opt} mutates a permutation.
-#'              The per position mutation rate is given by MutationRate().
 #'
 #' @details This operator is an implementation of the 2-Opt move
 #'          due to Croes (1958).
@@ -146,9 +145,8 @@ xegaPermMutateGene2Opt<-function(gene, lF)
 #' Mutate a gene (by a random Lin-Kernighan k-OPT move).
 #'
 #' @description \code{xegaPermMutateGenekOptLK} mutates a permutation.
-#'              The mutation rate of a gene is given by MutationRate().
 #'
-#' @details This operator is an implementation of the random k-Opt move
+#' @details This operator implements a random k-Opt move
 #'          version of the Lin-Kernighan heuristic.
 #'          
 #'          A sequence of random 2-Opt moves, all of which improve 
@@ -184,14 +182,13 @@ xegaPermMutateGenekOptLK<-function(gene, lF)
  return(newgene)
 }
 
-#' Mutate a gene (by inserting a greedy path at start of random length k).
+#' Mutate a gene (by inserting a greedy path at a random start position with a random length of k).
 #'
 #' @description \code{xegaPermMutateGeneGreedy} mutates a permutation 
 #'              by inserting a greedy path of length \code{k} 
 #'              at a random position \code{start}.
-#'              The mutation rate for a gene is given by MutationRate().
 #'
-#' @details    The path length \code{k} is expontially decaying
+#' @details    The path length \code{k} is exponentially decaying
 #'              with exponential decay constant \code{lambda}.
 #'
 #' @param gene  A Permutation. 
@@ -228,14 +225,13 @@ xegaPermMutateGeneGreedy<-function(gene, lF)
   newgene<-lF$EvalGene(newgene, lF)
   return(newgene)}
 
-#' Mutate a gene (by inserting a greedy path at start of random length k).
+#' Mutate a gene (by inserting the best greedy path at a random start position with a random length of k).
 #'
-#' @description \code{xegaPermMutateGeneGreedy} mutates a permutation 
-#'              by inserting a greedy path of length \code{k} 
+#' @description \code{xegaPermMutateGeneBestGreedy} mutates a permutation 
+#'              by inserting the best greedy path of length \code{k} 
 #'              at a random position \code{start}.
-#'              The mutation rate for a gene is given by \code{MutationRate()}.
 #'
-#' @details    The path length \code{k} is expontially decaying
+#' @details    The path length \code{k} is exponentially decaying
 #'              with exponential decay constant \code{lF$lambda()}.
 #'
 #' @param gene     A Permutation.
@@ -305,7 +301,7 @@ return(ng)
 #'              of one of the gene mutation functions in this 
 #'              package by specifying a text string.
 #'              The selection fails ungracefully (produces
-#'              a runtime error), if the label does not match.
+#'              a runtime error) if the label does not match.
 #'              The functions are specified locally.             
 #'         
 #' Current Support:

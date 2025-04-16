@@ -16,7 +16,6 @@ A Permutation.
 }
 \description{
 \code{xegaPermMutateGene2Opt} mutates a permutation.
-             The per position mutation rate is given by MutationRate().
 }
 \details{
 This operator is an implementation of the 2-Opt move

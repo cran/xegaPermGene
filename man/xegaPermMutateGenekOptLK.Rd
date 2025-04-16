@@ -16,10 +16,9 @@ A Permutation.
 }
 \description{
 \code{xegaPermMutateGenekOptLK} mutates a permutation.
-             The mutation rate of a gene is given by MutationRate().
 }
 \details{
-This operator is an implementation of the random k-Opt move
+This operator implements a random k-Opt move
          version of the Lin-Kernighan heuristic.
          
          A sequence of random 2-Opt moves, all of which improve 

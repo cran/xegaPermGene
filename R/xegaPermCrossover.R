@@ -6,7 +6,7 @@
 #     Package: xegaPermGene
 #
 
-#' Position based crossover of 2 genes. 
+#' Position-based crossover of 2 genes. 
 #'
 #' @description \code{xegaPermCross2Gene} determines 
 #'              a random subschedule of random length.
@@ -60,7 +60,7 @@ xegaPermCross2Gene<-function(gg1, gg2, lF)
 }
 
 
-#' Position based crossover of 2 genes. 
+#' Position-based crossover of 2 genes. 
 #'
 #' @description \code{xegaPermCrossGene} determines 
 #'              a random subschedule of random length.
@@ -114,7 +114,7 @@ xegaPermCrossGene<-function(gg1, gg2, lF)
 #'              of one of the crossover functions in this
 #'              package by specifying a text string.
 #'              The selection fails ungracefully (produces
-#'              a runtime error), if the label does not match.
+#'              a runtime error) if the label does not match.
 #'              The functions are specified locally.
 #'
 #'              Current support:

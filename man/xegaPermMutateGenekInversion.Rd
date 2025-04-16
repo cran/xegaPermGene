@@ -16,11 +16,11 @@ A Permutation.
 }
 \description{
 \code{xegaPermMutateGenekInversion} performs k random inversions.
-             The number of inversions is expontially decaying
+             The number of inversions is exponentially decaying
              with exponential decay constant \code{lambda}.
 }
 \details{
-The only difference to the order based mutation 
+The only difference to the order-based mutation 
          operator (Syswerda, 1991) is the exponential decay 
          in the number of inversions. 
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/xegaPermCrossover.R
 \name{xegaPermCross2Gene}
 \alias{xegaPermCross2Gene}
-\title{Position based crossover of 2 genes.}
+\title{Position-based crossover of 2 genes.}
 \usage{
 xegaPermCross2Gene(gg1, gg2, lF)
 }

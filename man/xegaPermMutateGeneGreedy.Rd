@@ -2,7 +2,7 @@
 % Please edit documentation in R/xegaPermMutate.R
 \name{xegaPermMutateGeneGreedy}
 \alias{xegaPermMutateGeneGreedy}
-\title{Mutate a gene (by inserting a greedy path at start of random length k).}
+\title{Mutate a gene (by inserting a greedy path at a random start position with a random length of k).}
 \usage{
 xegaPermMutateGeneGreedy(gene, lF)
 }
@@ -18,10 +18,9 @@ A Permutation.
 \code{xegaPermMutateGeneGreedy} mutates a permutation 
              by inserting a greedy path of length \code{k} 
              at a random position \code{start}.
-             The mutation rate for a gene is given by MutationRate().
 }
 \details{
-The path length \code{k} is expontially decaying
+The path length \code{k} is exponentially decaying
              with exponential decay constant \code{lambda}.
 }
 \examples{

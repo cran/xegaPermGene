@@ -16,11 +16,11 @@ A Permutation.
 }
 \description{
 \code{xegaPermMutateGene} mutates a permutation.
-              The per position mutation rate is given by 
+              The per-position mutation rate is given by 
               \code{lF$BitMutationRate1()}.
 }
 \details{
-This operator is an implementation of a generalized 
+This operator implements a generalized 
          order based mutation operator (Syswerda, 1991).
 
          \enumerate{

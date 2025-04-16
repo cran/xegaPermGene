@@ -1,6 +1,6 @@
 Package: xegaPermGene
 Title: Operations on Permutation Genes
-Version: 1.0.0.0
+Version: 1.0.0.1
 Authors@R: 
     person(given = "Andreas",
            family = "Geyer-Schulz",
@@ -10,8 +10,8 @@ Authors@R:
 Maintainer: Andreas Geyer-Schulz <Andreas.Geyer-Schulz@kit.edu>
 Description: An implementation of 
         representation-dependent gene level operations for
-        genetic algorithms with genes which represent permutations: 
-        initialization of genes, mutation and crossover.
+        genetic algorithms with genes representing permutations: 
+        Initialization of genes, mutation, and crossover.
         The crossover operation provided is position-based crossover 
         (Syswerda, G., Chap. 21 in Davis, L. (1991, ISBN:0-442-00173-8). 
         For mutation, several variants are included: Order-based mutation
@@ -24,14 +24,14 @@ Description: An implementation of
         A random mix operator for mutation selects a mutation variant 
         randomly.
 License: MIT + file LICENSE
-URL: <https://github.com/ageyerschulz/xegaPermGene>
+URL: https://github.com/ageyerschulz/xegaPermGene
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Suggests: testthat (>= 3.0.0)
 Imports: xegaSelectGene
 NeedsCompilation: no
-Packaged: 2024-02-04 21:21:12 UTC; dj2333
+Packaged: 2025-04-16 10:11:28 UTC; dj2333
 Author: Andreas Geyer-Schulz [aut, cre]
     (<https://orcid.org/0009-0000-5237-3579>)
 Repository: CRAN
-Date/Publication: 2024-02-05 21:00:02 UTC
+Date/Publication: 2025-04-16 12:20:02 UTC

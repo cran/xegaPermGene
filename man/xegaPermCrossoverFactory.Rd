@@ -17,7 +17,7 @@ A crossover function for genes.
              of one of the crossover functions in this
              package by specifying a text string.
              The selection fails ungracefully (produces
-             a runtime error), if the label does not match.
+             a runtime error) if the label does not match.
              The functions are specified locally.
 
              Current support:

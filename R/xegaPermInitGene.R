@@ -13,16 +13,13 @@
 #'
 #'
 #' @details In the permutation representation of 
-#'          package \code{xegaPerm}, \emph{gene} is a list with 
+#'          package \code{xegaPerm}, a \emph{gene} is a list with 
 #'          \enumerate{
 #'          \item \code{$evaluated}: Boolean: TRUE if the fitness is known.
 #'          \item \code{$fit}:       The fitness of the genotype of 
 #'                                  \code{$gene1}.         
-#'          \item \code{$gene1}:     The permutation (the genetopye).
+#'          \item \code{$gene1}:     The permutation (the genotype).
 #'          }
-#'
-#'          This representation makes several code optimizations
-#'          and generalizations easier.
 #'
 #' @param lF   Local configuration of the genetic algorithm.
 #'
